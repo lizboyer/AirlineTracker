@@ -18,4 +18,4 @@ Final project for kyuhahp2-eboyer2-mac18-pkr3
 3. **Conflict Resolution** If a team member does not join a Discord meeting without notifying the day before or is consistantly late, the team member will be asked to explain their situation. If the issue persists, staff will be notified. Additionally, if a team member's assigned work is uncomplete the same steps will be taken. If there is a disagreement between team members, a voting system will be used.
 
 ## Signatures
-Nick Park (kyuhahp2) Madigan Carroll (mac18)
+Nick Park (kyuhahp2) Madigan Carroll (mac18) Pranet Kumar Ramesh (pkr3)
