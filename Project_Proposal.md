@@ -22,8 +22,13 @@ To traverse through the airline graph, we will be implementing DFS due to its co
 
 ## 4. Timeline
 April 5: Data format and process
+
 April 12: Finish DFS
+
 April 19: Finish Dijkstra’s Algorithm
+
 April 26: Finish strongly connected components
+
 May 3: Finalization/Edits & work on deliverables
+
 May 6: Final Deliverables due
