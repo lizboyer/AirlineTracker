@@ -6,7 +6,7 @@ Final project for kyuhahp2-eboyer2-mac18-pkr3
 ## 1. Leading Question
 Our goal is to create a search algorithm to the top 3 shortest paths between any two airports, using Dijkstra’s and the Strongly Connected Component Algorithms and the OpenFlights dataset. Dijkstra’s Algorithm finds the shortest path between nodes in a graph. Here, those nodes are airports, and the edges are the flight paths from OpenFlights. Strongly Connected Component Algorithms finds components that have the greatest amount of connections going through them, in our case, these are airports with the greatest amount of traffic. If time allows, we also plan to implement a GUI to allow the user to navigate the program. 
 
-## 2. Dataset Acquisision
+## 2. Dataset Acquisition
 We will gather data on Airports and flights connecting them from OpenFlights. From the site, we will download the airport database, including over 14,000 airports and the routes database including over 67,000 flights, each in the form of a CSV.
 
 Each airport in the database contains 14 values, only 7 of which we will need at most. We only need the values that allow us to link them to flights, and the information we want to print out. Similarly, the only values we need from the routes database are those that allow us to link them to airports. We will parse the data and discard the values we are not interested in by reading the CSV directly into our C++ program and do all the processing in C++.
