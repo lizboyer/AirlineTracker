@@ -1,0 +1,2 @@
+1. **Week of April 2**
+In our proposal we set a goal to complete data proccessing by our weekly meeting on April 5th. We did not meet this week. We decided to assign work and begin at our meetin on April 5th.
