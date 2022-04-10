@@ -83,3 +83,7 @@ vector<vector<string>> data_formatter::edge_format(string filename){
     }
     return data_vec;
 }
+
+int main() {
+    return 0;
+};
