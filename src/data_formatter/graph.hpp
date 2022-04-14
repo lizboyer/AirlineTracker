@@ -1,4 +1,4 @@
-#include "data_formatter.h"
+#include "../graph.h";
 
 #include <iostream>
 #include <fstream>
@@ -10,7 +10,7 @@ using std::string;
 using std::vector;
 
 
-vector<vector<string>> data_formatter::node_format(string filename){
+vector<vector<string>> AirTravel::node_format(string filename){
     //airports formatter
     std::fstream AIfile (filename, std::ios::in);
     //std::fstream AOfile (filename, std::ios::out);
@@ -48,7 +48,7 @@ vector<vector<string>> data_formatter::node_format(string filename){
 
 
 
-vector<vector<string>> data_formatter::edge_format(string filename){
+vector<vector<string>> AirTravel::edge_format(string filename){
     //routes formatter
     std::fstream RIfile (filename, std::ios::in);
     //std::fstream ROfile ("./data/routes_formatted.dat", std::ios::out);
@@ -83,7 +83,3 @@ vector<vector<string>> data_formatter::edge_format(string filename){
     }
     return data_vec;
 }
-
-int main() {
-    return 0;
-};
