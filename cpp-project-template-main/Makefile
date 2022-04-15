@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bnguyen4/Desktop/cpp-project-template
+CMAKE_SOURCE_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bnguyen4/Desktop/cpp-project-template
+CMAKE_BINARY_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bnguyen4/Desktop/cpp-project-template/CMakeFiles /home/bnguyen4/Desktop/cpp-project-template/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bnguyen4/Desktop/cpp-project-template/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,45 +169,6 @@ ParsingLib/fast:
 	$(MAKE) $(MAKESILENT) -f parsing/CMakeFiles/ParsingLib.dir/build.make parsing/CMakeFiles/ParsingLib.dir/build
 .PHONY : ParsingLib/fast
 
-#=============================================================================
-# Target rules for targets named test-adder
-
-# Build rule for target.
-test-adder: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-adder
-.PHONY : test-adder
-
-# fast build rule for target.
-test-adder/fast:
-	$(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/build
-.PHONY : test-adder/fast
-
-#=============================================================================
-# Target rules for targets named main-adder
-
-# Build rule for target.
-main-adder: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main-adder
-.PHONY : main-adder
-
-# fast build rule for target.
-main-adder/fast:
-	$(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/build
-.PHONY : main-adder/fast
-
-#=============================================================================
-# Target rules for targets named AdderLib
-
-# Build rule for target.
-AdderLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AdderLib
-.PHONY : AdderLib
-
-# fast build rule for target.
-AdderLib/fast:
-	$(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/build
-.PHONY : AdderLib/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,11 +177,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... AdderLib"
 	@echo "... ParsingLib"
-	@echo "... main-adder"
 	@echo "... main-parsing"
-	@echo "... test-adder"
 	@echo "... test-parsing"
 .PHONY : help
 

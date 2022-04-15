@@ -21,3 +21,8 @@ _deps/
 
 .DS_Store
 pagerank.txt
+
+
+#dev container stuff
+.devcontainer
+

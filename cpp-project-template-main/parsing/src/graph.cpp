@@ -5,11 +5,11 @@
 #include <unordered_map>
 #include <string>
 
-#include "graph.h"
-
 using std::unordered_map;
 using std::vector;
 using std::string;
+
+#include "../include/graph.h"
 
 AirTravel::Node::Node(){};
 

@@ -1,5 +1,5 @@
 #include "catch2/catch.hpp"
-
+/*
 #include "../include/node.h"
 
 using Parser::Node;
@@ -25,3 +25,4 @@ TEST_CASE("Node tests") {
         REQUIRE(n2.getID() == 1);
     }
 }
+*/
