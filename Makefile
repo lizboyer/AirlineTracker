@@ -4,8 +4,11 @@ LD = clang++
 CXXFLAGS = -std=c++1y -stdlib=libc++ -c -Ofast -g -Wall -Wextra -Werror -pedantic
 LDFLAGS = -std=c++1y -stdlib=libc++ -Ofast -lc++abi
 
-data_formatter: data_formatter.o
-	$(LD) $(LDFLAGS) $^ -o $@
+main: main.o graph.o
+	$(LD) $(LDFLAGS) -o main main.o graph.o
 
-data_formatter.o: src/data_formatter/data_formatter.cpp 
-	$(CXX) $(CXXFLAGS) $^ -o $@
+main.o: main.cpp 
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+graph.o: graph.cpp 
+	$(CXX) $(CXXFLAGS) -c graph.cpp
