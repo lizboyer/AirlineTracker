@@ -30,8 +30,9 @@ class DFS {
     */
     void DFShelper (size_t v);
 
+    vector<bool> visited { false };
+    
     private:
-        vector<bool> visited { false };
         unordered_map<string, AirTravel::Node> nodes;
         unordered_map<size_t, string> links;
 };
