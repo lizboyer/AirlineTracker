@@ -13,6 +13,8 @@
 #include "../../parsing/include/graph.h"
 
 class DFS {
+
+    public:
     /**
     * Called by main function. Iterates through
     * the graph until it hits a node that has not

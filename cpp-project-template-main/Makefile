@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pkr3/project/cpp-project-template-main
+CMAKE_SOURCE_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pkr3/project/cpp-project-template-main
+CMAKE_BINARY_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pkr3/project/cpp-project-template-main/CMakeFiles /home/pkr3/project/cpp-project-template-main/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pkr3/project/cpp-project-template-main/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
