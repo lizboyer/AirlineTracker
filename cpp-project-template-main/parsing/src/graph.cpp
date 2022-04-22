@@ -35,13 +35,14 @@ AirTravel::AirTravel(string airports_file, string routes_file){
     vector<vector<string>> nodes = node_format(airports_file);
 
     vector<vector<string>> edges = edge_format(routes_file);
-
+    size_t i = 0;
     for(vector<string> & airports : nodes){
         Node newnode(airports);
         string id = newnode.get_id();
 
         graph_nodes[id] = newnode;
-
+        link[i] = id;
+        i++;
     };
 
     for(auto it : graph_nodes){

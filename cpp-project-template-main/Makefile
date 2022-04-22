@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
+CMAKE_SOURCE_DIR = /home/pkr3/project/cpp-project-template-main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
+CMAKE_BINARY_DIR = /home/pkr3/project/cpp-project-template-main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pkr3/project/cpp-project-template-main/CMakeFiles /home/pkr3/project/cpp-project-template-main/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pkr3/project/cpp-project-template-main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,6 +169,45 @@ ParsingLib/fast:
 	$(MAKE) $(MAKESILENT) -f parsing/CMakeFiles/ParsingLib.dir/build.make parsing/CMakeFiles/ParsingLib.dir/build
 .PHONY : ParsingLib/fast
 
+#=============================================================================
+# Target rules for targets named test-dfs
+
+# Build rule for target.
+test-dfs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-dfs
+.PHONY : test-dfs
+
+# fast build rule for target.
+test-dfs/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/build
+.PHONY : test-dfs/fast
+
+#=============================================================================
+# Target rules for targets named main-dfs
+
+# Build rule for target.
+main-dfs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main-dfs
+.PHONY : main-dfs
+
+# fast build rule for target.
+main-dfs/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-dfs.dir/build.make algorithms/CMakeFiles/main-dfs.dir/build
+.PHONY : main-dfs/fast
+
+#=============================================================================
+# Target rules for targets named AlgorithmsLib
+
+# Build rule for target.
+AlgorithmsLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AlgorithmsLib
+.PHONY : AlgorithmsLib
+
+# fast build rule for target.
+AlgorithmsLib/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/build
+.PHONY : AlgorithmsLib/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -177,8 +216,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... AlgorithmsLib"
 	@echo "... ParsingLib"
+	@echo "... main-dfs"
 	@echo "... main-parsing"
+	@echo "... test-dfs"
 	@echo "... test-parsing"
 .PHONY : help
 
