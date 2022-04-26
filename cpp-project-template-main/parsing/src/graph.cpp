@@ -56,20 +56,29 @@ AirTravel::AirTravel(string airports_file, string routes_file){
 
 
 vector<vector<string>> AirTravel::node_format(string filename){
-    std::cout << "starting function" << "\n";
-    std::cout << "filename = " << filename << "\n";
+    
+    std::cout << "starting function" << "\n"; ///////// debug //////////
+    std::cout << "filename = " << filename << "\n"; ///////// debug //////////
+   
     //airports formatter
     std::fstream AIfile (filename, std::ios::in);
+
+    std::cout << AIfile.is_open() << "\n"; ///////// debug //////////
+
     //std::fstream AOfile (filename, std::ios::out);
     vector<vector<string>> data_vec;
     vector<string> temp;
 
-    std::cout << AIfile.is_open() << "\n";
+    std::cout << AIfile.is_open() << "\n"; ///////// debug //////////
+
     std::string Aline;
     while (AIfile.is_open()) {
-        std::cout << "file gets opened" << "\n";
+        
+        //std::cout << "file gets opened" << "\n"; ///////// debug //////////
+        
         std::getline(AIfile, Aline);
-        std::cout << Aline << "\n";
+
+        //std::cout << Aline << "\n";  ///////// debug //////////
 
         std::istringstream ss(Aline);
         std::string Atoken;
