@@ -32,9 +32,9 @@ void AirTravel::Node::set_adjacent(vector<string> edges){
 AirTravel::AirTravel(){}
 
 AirTravel::AirTravel(string airports_file, string routes_file){
-    vector<vector<string>> nodes = node_format(airports_file);
+    vector<vector<string>> nodes = node_formatter(airports_file);
 
-    vector<vector<string>> edges = edge_format(routes_file);
+    vector<vector<string>> edges = edge_formatter(routes_file);
     size_t i = 0;
     for(vector<string> & airports : nodes){
         Node newnode(airports);
@@ -55,7 +55,7 @@ AirTravel::AirTravel(string airports_file, string routes_file){
 }
 
 
-vector<vector<string>> AirTravel::node_format(string filename){
+vector<vector<string>> AirTravel::node_formatter(string filename){
     
     std::cout << "starting function" << "\n"; ///////// debug //////////
     std::cout << "filename = " << filename << "\n"; ///////// debug //////////
@@ -107,7 +107,7 @@ vector<vector<string>> AirTravel::node_format(string filename){
 
 
 
-vector<vector<string>> AirTravel::edge_format(string filename){
+vector<vector<string>> AirTravel::edge_formatter(string filename){
     //routes formatter
     std::fstream RIfile (filename, std::ios::in);
     //std::fstream ROfile ("./data/routes_formatted.dat", std::ios::out);

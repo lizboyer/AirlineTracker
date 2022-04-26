@@ -72,7 +72,7 @@ class AirTravel {
         where each nested vector contains strings of the member variables of the node
         representing that airport
         */
-        vector<vector<string>> node_format(string filename);
+        vector<vector<string>> node_formatter(string filename);
 
 
         /*  used in the constructor to build the graph
@@ -81,7 +81,7 @@ class AirTravel {
         where each nested vector contains 2 strings, which are the identifier ofthe
         source airport and desitination airport respectively.
         */
-        vector<vector<string>> edge_format(string filename);
+        vector<vector<string>> edge_formatter(string filename);
 
         /*   used in the constructor to build the graph
         takes in a string which is a 3 letter identifier and a
