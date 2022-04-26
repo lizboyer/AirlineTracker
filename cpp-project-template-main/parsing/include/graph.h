@@ -52,7 +52,6 @@ class AirTravel {
         };
 
 
-    public:
 
         AirTravel();
 
@@ -64,7 +63,7 @@ class AirTravel {
         //double CalcDist(string depart_id, string dest_id);
 
     
-    private:
+
 
 
         /*  used in the constructor to build the graph

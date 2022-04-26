@@ -7,8 +7,19 @@ using std::vector;
 using std::string;
 
 
+TEST_CASE("node_formatter returns propper vectors") {
+    AirTravel graph = AirTravel();
+
+    vector<vector<string>> nodes = graph.node_format("./test_nodes.dat");
+
+    REQUIRE(!nodes.empty());
+}
+
+
 TEST_CASE("correct parsing") {
-    AirTravel graph = AirTravel("./test_nodes","./test_edges");
+    AirTravel graph = AirTravel();
+
+
 
     int count = 0;
     for(auto it : graph.graph_nodes) {
