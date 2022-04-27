@@ -7,13 +7,22 @@ using std::vector;
 using std::string;
 
 
-TEST_CASE("node_formatter returns propper vectors") {
+TEST_CASE("node_formatter test small_simple") {
     AirTravel graph = AirTravel();
 
-    vector<vector<string>> nodes = graph.node_formatter("./parsing/tests/test_nodes.dat");
+    vector<vector<string>> nodes = graph.node_formatter("./parsing/tests/test_nodes_small_simple.dat");
 
     REQUIRE(!nodes.empty());
     REQUIRE(nodes.size() == 5);
+
+    bool pass = true;
+
+    for (int i = 0; i < nodes.size(); i++) {
+        if (nodes[i].size() != 4)
+            pass = false;
+            break;
+    }
+    REQUIRE(pass);
 }
 
 
