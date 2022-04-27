@@ -35,8 +35,12 @@ class AirTravel {
             //returns the vector of identifiers of adjacent nodes
             //vector<string> Adjacent();
 
-            //returns the airport's identifier
-            string get_id() const;
+            //getters
+            string id() const;
+            string name() const;
+            double lat() const;
+            double lon() const;
+
 
             void set_adjacent(vector<string> edges);
 
@@ -60,10 +64,7 @@ class AirTravel {
         unordered_map<string, Node> graph_nodes;
         unordered_map<size_t, string> link;
 
-        //double CalcDist(string depart_id, string dest_id);
-
-    
-
+        double CalcDist(string depart_id, string dest_id);
 
 
         /*  used in the constructor to build the graph

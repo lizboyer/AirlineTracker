@@ -4,6 +4,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <cmath>
 
 using std::unordered_map;
 using std::vector;
@@ -20,8 +21,20 @@ AirTravel::Node::Node(vector<string> strings){
     long_ = stod(strings[3]);
 }
 
-string AirTravel::Node::get_id() const{
+string AirTravel::Node::id() const{
     return identifier_;
+}
+
+string AirTravel::Node::name() const{
+    return name_;
+}
+
+double AirTravel::Node::lat() const{
+    return lat_;
+}
+
+double AirTravel::Node::lon() const{
+    return long_;
 }
 
 void AirTravel::Node::set_adjacent(vector<string> edges){
@@ -38,7 +51,7 @@ AirTravel::AirTravel(string airports_file, string routes_file){
     size_t i = 0;
     for(vector<string> & airports : nodes){
         Node newnode(airports);
-        string id = newnode.get_id();
+        string id = newnode.id();
 
         graph_nodes[id] = newnode;
         link[i] = id;
@@ -52,6 +65,20 @@ AirTravel::AirTravel(string airports_file, string routes_file){
         vector<string> incident = build_edges(id, edges);
         node.set_adjacent(incident);
     }
+}
+
+
+double AirTravel::CalcDist(string depart_id, string dest_id) {
+    AirTravel::Node node1 = graph_nodes[depart_id];
+    AirTravel::Node node2 = graph_nodes[dest_id];
+
+    double lat1 = node1.lat();
+    double lon1 = node1.lon();
+    double lat2 = node2.lat();
+    double lon2 = node2.lon();
+
+    return std::sqrt(std::pow((lat2-lat1),2) + std::pow((lon2-lon1),2));
+    
 }
 
 
