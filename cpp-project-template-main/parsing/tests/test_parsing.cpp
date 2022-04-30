@@ -1,15 +1,16 @@
 #include "catch2/catch.hpp"
+#include <iostream>
 
 #include "../include/graph.h"
 
 using std::unordered_map;
 using std::vector;
 using std::string;
+using namespace std;
 
 
 TEST_CASE("correct parsing") {
     AirTravel graph = AirTravel("./test_nodes","./test_edges");
-
     int count = 0;
     for(auto it : graph.graph_nodes) {
         if (it.first == "???")

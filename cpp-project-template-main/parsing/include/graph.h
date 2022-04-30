@@ -58,7 +58,7 @@ class AirTravel {
 
         AirTravel(string airports_file, string routes_file);
 
-        unordered_map<string, Node> graph_nodes;
+        unordered_map<string, Node*> graph_nodes;
         unordered_map<size_t, string> link;
 
         //double CalcDist(string depart_id, string dest_id);

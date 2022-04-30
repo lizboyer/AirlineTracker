@@ -23,4 +23,5 @@ TEST_CASE("Testing DFS") {
 		i++;
 		REQUIRE(dfs.visited[v] == true);
 	}
+	REQUIRE(dfs.visited.size() == 0);
 } 

@@ -37,8 +37,8 @@ AirTravel::AirTravel(string airports_file, string routes_file){
     vector<vector<string>> edges = edge_format(routes_file);
     size_t i = 0;
     for(vector<string> & airports : nodes){
-        Node newnode(airports);
-        string id = newnode.get_id();
+        Node* newnode = new Node(airports);
+        string id = newnode->get_id();
 
         graph_nodes[id] = newnode;
         link[i] = id;
@@ -47,10 +47,10 @@ AirTravel::AirTravel(string airports_file, string routes_file){
 
     for(auto it : graph_nodes){
         string id = it.first;
-        Node & node = it.second;
+        Node* node = it.second;
 
         vector<string> incident = build_edges(id, edges);
-        node.set_adjacent(incident);
+        node->set_adjacent(incident);
     }
 }
 
