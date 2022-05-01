@@ -44,6 +44,22 @@ TEST_CASE("edge_formatter test small_simple") {
 }
 
 
+TEST_CASE("Graph size > 0") {
+    string node_file = "./parsing/tests/test_nodes_small_simple.dat";
+    string edge_file = "./parsing/tests/test_edges_small_simple.dat";
+
+
+    AirTravel graph(node_file, edge_file);
+
+    unordered_map<string, AirTravel::Node> & nodes = graph.graph_nodes;
+
+
+    REQUIRE(!nodes.empty());
+    REQUIRE(nodes.size() == 5);
+}
+
+
+
 TEST_CASE("correct parsing") {
     AirTravel graph = AirTravel();
 
