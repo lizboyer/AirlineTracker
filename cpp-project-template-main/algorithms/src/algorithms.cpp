@@ -10,21 +10,19 @@ DFS::DFS (AirTravel graph) {
 	nodes = graph.graph_nodes;
 	links = graph.link;
     visited.resize(nodes.size(), false);
-	for (size_t i = 0; i < visited.size(); ++i) {    //iterates through vertex
-		if (visited[i] == false) {  //if the node has not been visited, call DFShelper
-			DFShelper(i);
+	for (auto i : nodes) {    //iterates through vertex
+		if (visited[links[i.first]] == false) {  //if the node has not been visited, call DFShelper
+			DFShelper(i.first);
 		}
 	}
 }
 
-void DFS::DFShelper (size_t v) {   
-	visited[v] = true;  //turn visited to true
-    vector<string> adjacent_ids = nodes[links[v]]->incident_edges;
-	for (size_t i = 0; i < adjacent_ids.size(); ++i) {    //iterate through vertex
-		auto it = nodes.find(adjacent_ids[i]);
-		size_t j = links.find()->first;
-		if (!visited[j]) {  //if the node has not been visited, call DFShelper
-			DFShelper(j);
+void DFS::DFShelper (string id) {   
+	visited[links[id]] = true;  //turn visited to true
+    vector<string> adjacent_ids = nodes[id].incident_edges;
+	for (auto i : adjacent_ids) {    //iterate through vertex
+		if (!visited[links[i]]) {  //if the node has not been visited, call DFShelper
+			DFShelper(i);
 		}
 	}
 }

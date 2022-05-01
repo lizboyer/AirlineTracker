@@ -4,6 +4,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <cmath>
 
 using std::unordered_map;
 using std::vector;
@@ -20,8 +21,20 @@ AirTravel::Node::Node(vector<string> strings){
     long_ = stod(strings[3]);
 }
 
-string AirTravel::Node::get_id() const{
+string AirTravel::Node::id() const{
     return identifier_;
+}
+
+string AirTravel::Node::name() const{
+    return name_;
+}
+
+double AirTravel::Node::lat() const{
+    return lat_;
+}
+
+double AirTravel::Node::lon() const{
+    return long_;
 }
 
 void AirTravel::Node::set_adjacent(vector<string> edges){
@@ -32,38 +45,55 @@ void AirTravel::Node::set_adjacent(vector<string> edges){
 AirTravel::AirTravel(){}
 
 AirTravel::AirTravel(string airports_file, string routes_file){
-    vector<vector<string>> nodes = node_format(airports_file);
+    vector<vector<string>> nodes = node_formatter(airports_file);
 
-    vector<vector<string>> edges = edge_format(routes_file);
+    vector<vector<string>> edges = edge_formatter(routes_file);
     size_t i = 0;
     for(vector<string> & airports : nodes){
-        Node* newnode = new Node(airports);
-        string id = newnode->get_id();
+        Node newnode(airports);
+        string id = newnode.id();
 
         graph_nodes[id] = newnode;
-        link[i] = id;
+        link[id] = i;
         i++;
     };
 
     for(auto it : graph_nodes){
         string id = it.first;
-        Node* node = it.second;
+        Node node = it.second;
 
         vector<string> incident = build_edges(id, edges);
-        node->set_adjacent(incident);
+        node.set_adjacent(incident);
     }
 }
 
 
-vector<vector<string>> AirTravel::node_format(string filename){
+double AirTravel::CalcDist(string depart_id, string dest_id) {
+    AirTravel::Node node1 = graph_nodes[depart_id];
+    AirTravel::Node node2 = graph_nodes[dest_id];
+
+    double lat1 = node1.lat();
+    double lon1 = node1.lon();
+    double lat2 = node2.lat();
+    double lon2 = node2.lon();
+
+    return std::sqrt(std::pow((lat2-lat1),2) + std::pow((lon2-lon1),2));
+    
+}
+
+
+vector<vector<string>> AirTravel::node_formatter(string filename){
+   
     //airports formatter
     std::fstream AIfile (filename, std::ios::in);
+
     //std::fstream AOfile (filename, std::ios::out);
     vector<vector<string>> data_vec;
     vector<string> temp;
 
     std::string Aline;
     while (AIfile.is_open()) {
+        
         std::getline(AIfile, Aline);
 
         std::istringstream ss(Aline);
@@ -93,7 +123,7 @@ vector<vector<string>> AirTravel::node_format(string filename){
 
 
 
-vector<vector<string>> AirTravel::edge_format(string filename){
+vector<vector<string>> AirTravel::edge_formatter(string filename){
     //routes formatter
     std::fstream RIfile (filename, std::ios::in);
     //std::fstream ROfile ("./data/routes_formatted.dat", std::ios::out);

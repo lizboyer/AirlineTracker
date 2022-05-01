@@ -35,8 +35,12 @@ class AirTravel {
             //returns the vector of identifiers of adjacent nodes
             //vector<string> Adjacent();
 
-            //returns the airport's identifier
-            string get_id() const;
+            //getters
+            string id() const;
+            string name() const;
+            double lat() const;
+            double lon() const;
+
 
             void set_adjacent(vector<string> edges);
 
@@ -52,19 +56,15 @@ class AirTravel {
         };
 
 
-    public:
 
         AirTravel();
 
         AirTravel(string airports_file, string routes_file);
 
-        unordered_map<string, Node*> graph_nodes;
-        unordered_map<size_t, string> link;
+        unordered_map<string, Node> graph_nodes;
+        unordered_map<string, size_t> link;
 
-        //double CalcDist(string depart_id, string dest_id);
-
-    
-    private:
+        double CalcDist(string depart_id, string dest_id);
 
 
         /*  used in the constructor to build the graph
@@ -73,7 +73,7 @@ class AirTravel {
         where each nested vector contains strings of the member variables of the node
         representing that airport
         */
-        vector<vector<string>> node_format(string filename);
+        vector<vector<string>> node_formatter(string filename);
 
 
         /*  used in the constructor to build the graph
@@ -82,7 +82,7 @@ class AirTravel {
         where each nested vector contains 2 strings, which are the identifier ofthe
         source airport and desitination airport respectively.
         */
-        vector<vector<string>> edge_format(string filename);
+        vector<vector<string>> edge_formatter(string filename);
 
         /*   used in the constructor to build the graph
         takes in a string which is a 3 letter identifier and a

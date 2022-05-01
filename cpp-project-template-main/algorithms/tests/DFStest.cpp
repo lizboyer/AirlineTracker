@@ -17,11 +17,9 @@ TEST_CASE("Testing DFS") {
 	//Tests that once DFS is called on the graph, all points will eventually be visited.
 	AirTravel graph = AirTravel("./test_nodes","./test_edges");
 	DFS dfs = DFS(graph);
-	int i = 0;
-	for (size_t v = 0; v < dfs.visited.size(); ++v) {
-		cout << i << endl;
-		i++;
-		REQUIRE(dfs.visited[v] == true);
+	REQUIRE(dfs.visited.size() == graph.graph_nodes.size());
+	std::cout << dfs.visited.size() << std::endl;
+	for (auto v : dfs.visited) {
+		REQUIRE(v == true);
 	}
-	REQUIRE(dfs.visited.size() == 0);
 } 
