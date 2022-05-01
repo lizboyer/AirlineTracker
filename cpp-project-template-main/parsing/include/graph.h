@@ -92,4 +92,9 @@ class AirTravel {
         */
         vector<string> build_edges(string id, vector<vector<string>> & routes);
 
+        /* not currently called anywhwere, but could be called in the constructor.
+        would remove all the nodes that do not have an edge going to it
+        */
+        void remove_extraneous();
+
 };
