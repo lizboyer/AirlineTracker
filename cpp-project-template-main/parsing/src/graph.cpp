@@ -49,8 +49,10 @@ AirTravel::AirTravel(string airports_file, string routes_file){
 
     vector<vector<string>> edges = edge_formatter(routes_file);
     size_t i = 0;
-    for(vector<string> & airports : nodes){
-        Node newnode(airports);
+
+    //makes all the nodes
+    for(vector<string> & airport : nodes){
+        Node newnode(airport);
         string id = newnode.id();
 
         graph_nodes[id] = newnode;
@@ -58,12 +60,17 @@ AirTravel::AirTravel(string airports_file, string routes_file){
         i++;
     };
 
+    //sets the edges
     for(auto it : graph_nodes){
         string id = it.first;
         Node node = it.second;
 
         vector<string> incident = build_edges(id, edges);
         node.set_adjacent(incident);
+
+        // if (incident.empty()) {          this code will ensure that nodes
+        //     graph_nodes.erase(id);       with no outgoing edges will not be 
+        // }                                included in the graph
     }
 }
 
@@ -170,4 +177,27 @@ vector<string> AirTravel::build_edges(string id, vector<vector<string>> & routes
     }
 
     return adjacent_ids;
+}
+
+void AirTravel::remove_extraneous() {
+    unordered_map<string, bool> tracker;
+    string key;
+    for (auto it : graph_nodes) {
+        key = it.first;
+        tracker[key] = false;
+    }
+        
+
+    for (auto it : graph_nodes){
+        vector<string> & ed = it.second.incident_edges;
+        for (int i = 0; i < int(ed.size()); i++) {
+            tracker[ed[i]] = true;
+        }
+    }
+
+    for (auto it : tracker) {
+        if(!it.second)
+            graph_nodes.erase(it.first);
+    
+    }
 }
