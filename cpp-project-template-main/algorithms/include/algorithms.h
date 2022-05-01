@@ -8,7 +8,7 @@
 #include <map>
 #include <string>
 #include <ostream>
-#include <queue>
+#include <algorithm>
 
 #include "../../parsing/include/graph.h"
 
@@ -35,6 +35,8 @@ class DFS {
     vector<bool> visited { false };
     
     private:
-        unordered_map<string, AirTravel::Node> nodes;
-        unordered_map<size_t, string> links;
+    unordered_map<string, AirTravel::Node> nodes;
+    unordered_map<size_t, string> links;
 };
+
+vector<string> dijkstra (AirTravel graph, string startID, string destinationID);
