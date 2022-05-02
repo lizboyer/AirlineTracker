@@ -48,14 +48,11 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 	make_heap(min_heap.begin(), min_heap.end(), std::greater<std::pair<double, string>>{});
 
 	// total distance tracker
+	// previous node tracker
 	unordered_map<string, double> nodeDist; 
+	unordered_map<string, string> prevNode; 
     for (pair<string, AirTravel::Node> element : graph.graph_nodes) {
 		nodeDist.insert(pair<string, double>(element.first, __DBL_MAX__));
-	}
-
-	// previous node tracker
-    unordered_map<string, string> prevNode; 
-	for (pair<string, AirTravel::Node> element : graph.graph_nodes) {
 		prevNode.insert(pair<string, string>(element.first, ""));
 	}
 
