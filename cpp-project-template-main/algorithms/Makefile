@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pkr3/project/cpp-project-template-main
+CMAKE_SOURCE_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pkr3/project/cpp-project-template-main
+CMAKE_BINARY_DIR = /home/mac18/Desktop/225_final_project/cpp-project-template-main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,14 +100,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pkr3/project/cpp-project-template-main && $(CMAKE_COMMAND) -E cmake_progress_start /home/pkr3/project/cpp-project-template-main/CMakeFiles /home/pkr3/project/cpp-project-template-main/algorithms/CMakeFiles/progress.marks
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pkr3/project/cpp-project-template-main/CMakeFiles 0
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles /home/mac18/Desktop/225_final_project/cpp-project-template-main/algorithms/CMakeFiles/progress.marks
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mac18/Desktop/225_final_project/cpp-project-template-main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/clean
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/preinstall
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/preinstall
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pkr3/project/cpp-project-template-main && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 algorithms/CMakeFiles/test-algo.dir/rule:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/test-algo.dir/rule
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/test-algo.dir/rule
 .PHONY : algorithms/CMakeFiles/test-algo.dir/rule
 
 # Convenience name for target.
@@ -142,12 +142,12 @@ test-algo: algorithms/CMakeFiles/test-algo.dir/rule
 
 # fast build rule for target.
 test-algo/fast:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/build
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/build
 .PHONY : test-algo/fast
 
 # Convenience name for target.
 algorithms/CMakeFiles/main-algo.dir/rule:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/main-algo.dir/rule
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/main-algo.dir/rule
 .PHONY : algorithms/CMakeFiles/main-algo.dir/rule
 
 # Convenience name for target.
@@ -157,12 +157,12 @@ main-algo: algorithms/CMakeFiles/main-algo.dir/rule
 
 # fast build rule for target.
 main-algo/fast:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/build
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/build
 .PHONY : main-algo/fast
 
 # Convenience name for target.
 algorithms/CMakeFiles/AlgorithmsLib.dir/rule:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/AlgorithmsLib.dir/rule
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/AlgorithmsLib.dir/rule
 .PHONY : algorithms/CMakeFiles/AlgorithmsLib.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ AlgorithmsLib: algorithms/CMakeFiles/AlgorithmsLib.dir/rule
 
 # fast build rule for target.
 AlgorithmsLib/fast:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/build
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/build
 .PHONY : AlgorithmsLib/fast
 
 main.o: main.cpp.o
@@ -181,7 +181,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.o
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -190,7 +190,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.i
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -199,7 +199,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.s
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/algorithms.o: src/algorithms.cpp.o
@@ -208,8 +208,8 @@ src/algorithms.o: src/algorithms.cpp.o
 
 # target to build an object file
 src/algorithms.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.o
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.o
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.o
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.o
 .PHONY : src/algorithms.cpp.o
 
 src/algorithms.i: src/algorithms.cpp.i
@@ -218,8 +218,8 @@ src/algorithms.i: src/algorithms.cpp.i
 
 # target to preprocess a source file
 src/algorithms.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.i
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.i
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.i
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.i
 .PHONY : src/algorithms.cpp.i
 
 src/algorithms.s: src/algorithms.cpp.s
@@ -228,8 +228,8 @@ src/algorithms.s: src/algorithms.cpp.s
 
 # target to generate assembly for a file
 src/algorithms.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.s
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.s
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.s
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.s
 .PHONY : src/algorithms.cpp.s
 
 tests/test.o: tests/test.cpp.o
@@ -238,7 +238,7 @@ tests/test.o: tests/test.cpp.o
 
 # target to build an object file
 tests/test.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.o
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.o
 .PHONY : tests/test.cpp.o
 
 tests/test.i: tests/test.cpp.i
@@ -247,7 +247,7 @@ tests/test.i: tests/test.cpp.i
 
 # target to preprocess a source file
 tests/test.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.i
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.i
 .PHONY : tests/test.cpp.i
 
 tests/test.s: tests/test.cpp.s
@@ -256,7 +256,7 @@ tests/test.s: tests/test.cpp.s
 
 # target to generate assembly for a file
 tests/test.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.s
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
 tests/test_algorithms.o: tests/test_algorithms.cpp.o
@@ -265,7 +265,7 @@ tests/test_algorithms.o: tests/test_algorithms.cpp.o
 
 # target to build an object file
 tests/test_algorithms.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.o
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.o
 .PHONY : tests/test_algorithms.cpp.o
 
 tests/test_algorithms.i: tests/test_algorithms.cpp.i
@@ -274,7 +274,7 @@ tests/test_algorithms.i: tests/test_algorithms.cpp.i
 
 # target to preprocess a source file
 tests/test_algorithms.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.i
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.i
 .PHONY : tests/test_algorithms.cpp.i
 
 tests/test_algorithms.s: tests/test_algorithms.cpp.s
@@ -283,7 +283,7 @@ tests/test_algorithms.s: tests/test_algorithms.cpp.s
 
 # target to generate assembly for a file
 tests/test_algorithms.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.s
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.s
 .PHONY : tests/test_algorithms.cpp.s
 
 # Help Target
@@ -320,6 +320,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pkr3/project/cpp-project-template-main && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mac18/Desktop/225_final_project/cpp-project-template-main && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

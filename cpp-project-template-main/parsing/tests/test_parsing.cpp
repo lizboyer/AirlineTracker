@@ -33,7 +33,7 @@ TEST_CASE("edge_formatter test small_simple") {
     vector<vector<string>> edges = graph.edge_formatter("./parsing/tests/test_edges_small_simple.dat");
 
     REQUIRE(!edges.empty());
-    REQUIRE(edges.size() == 7);
+    REQUIRE(edges.size() == 4);
 
     bool pass = true;
 
@@ -60,6 +60,46 @@ TEST_CASE("Graph size > 0") {
     REQUIRE(nodes.size() == 5);
 }
 
+
+TEST_CASE("build_edges works") {
+    string node_file = "./parsing/tests/test_nodes_small_simple.dat";
+    string edge_file = "./parsing/tests/test_edges_small_simple.dat";
+    string id = "AAA";
+
+
+    AirTravel graph = AirTravel();
+
+    vector<vector<string>> edges = graph.edge_formatter(edge_file);
+
+
+    vector<string> inc = graph.build_edges("AAA", edges);
+
+    // std::cout << "passed" << endl;
+    // std::cout << inc.size();
+
+    REQUIRE(!inc.empty());
+    REQUIRE(inc.size() == 4);
+}
+
+
+TEST_CASE("edges get built in graph constructor") {
+    string node_file = "./parsing/tests/test_nodes_small_simple.dat";
+    string edge_file = "./parsing/tests/test_edges_small_simple.dat";
+    string id = "AAA";
+
+
+    AirTravel graph = AirTravel(node_file, edge_file);
+
+
+    vector<string> inc = graph.graph_nodes[id].incident_edges;
+
+    // std::cout << "passed" << endl;
+    // std::cout << inc.size();
+    
+    REQUIRE(!graph.graph_nodes.empty());
+    REQUIRE(!inc.empty());
+    REQUIRE(inc.size() == 4);
+}
 
 
 TEST_CASE("correct parsing") {

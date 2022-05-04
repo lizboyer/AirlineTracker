@@ -64,10 +64,9 @@ AirTravel::AirTravel(string airports_file, string routes_file){
     //sets the edges
     for(auto it : graph_nodes){
         string id = it.first;
-        Node node = it.second;
 
-        node.incident_edges = build_edges(id, edges);
-        std::cout << id << " in graph.cpp: " << node.incident_edges.size() << std::endl;
+        graph_nodes[id].incident_edges = build_edges(id, edges);
+        //std::cout << id << " in graph.cpp: " << node.incident_edges.size() << std::endl;
 
         // if (incident.empty()) {          this code will ensure that nodes
         //     graph_nodes.erase(id);       with no outgoing edges will not be 
