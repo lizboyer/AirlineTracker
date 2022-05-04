@@ -96,7 +96,6 @@ TEST_CASE("edges get built in graph constructor") {
     // std::cout << "passed" << endl;
     // std::cout << inc.size();
     
-    REQUIRE(!graph.graph_nodes.empty());
     REQUIRE(!inc.empty());
     REQUIRE(inc.size() == 4);
 }

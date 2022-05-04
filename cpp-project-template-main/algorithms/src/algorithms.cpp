@@ -2,6 +2,8 @@
 
 #include "../include/algorithms.h"
 #include <iostream>
+#include <stack>
+
 using namespace std;
 
 //DFS
@@ -102,3 +104,83 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 	reverse(path.begin(), path.end());
 	return path;
 }
+
+/////////// Kosaraju ///////////////
+int Kosaraju(AirTravel graph) {
+	unordered_map<string, AirTravel::Node> nodes = graph.graph_nodes;
+	unordered_map<string, AirTravel::Node> nodes_r;
+	stack<string> stk;
+	unordered_map<string, bool> visited;
+	int num_components = 0;
+
+	//set visited to false for all nodes,
+	//also initialize the graph_nodes map that will become the reversed graph
+	for(auto it : nodes) {
+		visited[it.first] = false;
+		nodes_r[it.first].incident_edges = {};
+	}	
+
+	//this begins the first dfs for topological sort
+	//after this loop, the stack should be built
+	for (auto it :nodes) {
+		if (visited[it.first])
+			continue;
+		K_helper0(visited, nodes, stk, it.first);	
+	}
+
+	//time to reverse the graph
+	vector<string> edges;
+
+	for (auto it : nodes) {
+		edges = it.second.incident_edges;
+		for (int i = 0; i < int(edges.size()); i++)
+			nodes_r[edges[i]].incident_edges.push_back(it.first);
+	}
+
+	//one more dfs, this time on the resversed graph,
+	//counting each time we go to a new connected component
+	for(auto it : nodes_r) {
+		visited[it.first] = false;
+	}
+
+	string cur_node;
+	while (!stk.empty()){
+		num_components++;
+		cur_node = stk.top();
+		if (visited[cur_node]){
+			stk.pop();
+			continue;
+		}
+		K_helper1(visited, nodes_r, stk, cur_node);	
+	}
+
+	return num_components;
+}
+
+void K_helper0(unordered_map<string, bool> & visited,
+	unordered_map<string, AirTravel::Node> & graph_nodes, 
+	stack<string> & stk, string cur_node){
+	
+	vector<string> & edges = graph_nodes[cur_node].incident_edges;
+
+	for(int i = 0; i < int(edges.size()); i++){
+		if (!visited[edges[i]])
+			K_helper0(visited, graph_nodes, stk, edges[i]);
+	}
+	stk.push(cur_node);
+	visited[cur_node] = true;
+}
+
+void K_helper1(unordered_map<string, bool> & visited,
+	unordered_map<string, AirTravel::Node> & graph_nodes, 
+	stack<string> & stk, string cur_node){
+	
+	vector<string> & edges = graph_nodes[cur_node].incident_edges;
+
+	for(int i = 0; i < int(edges.size()); i++){
+		if (!visited[edges[i]])
+			K_helper1(visited, graph_nodes, stk, edges[i]);
+	}
+	visited[cur_node] = true;
+}
+/////////// Kosaraju ////////////
