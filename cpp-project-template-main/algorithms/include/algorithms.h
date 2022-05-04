@@ -9,8 +9,11 @@
 #include <string>
 #include <ostream>
 #include <algorithm>
+#include <stack>
 
 #include "../../parsing/include/graph.h"
+
+using std::stack;
 
 class DFS {
 

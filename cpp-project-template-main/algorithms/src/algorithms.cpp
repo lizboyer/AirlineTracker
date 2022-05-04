@@ -2,7 +2,6 @@
 
 #include "../include/algorithms.h"
 #include <iostream>
-#include <stack>
 
 using namespace std;
 
