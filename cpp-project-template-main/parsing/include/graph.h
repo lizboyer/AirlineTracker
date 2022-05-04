@@ -11,9 +11,9 @@ using std::string;
 
 
 
-/*this is the "AorTravel class (we could change the name to whatever)"
-it contains a nested class node. The nodes are stored in a std::unordered map, 
-which is a hash map. The keys should be the 3 letter identifiers, so that 
+/*This is the AirTravel class which contains a nested class node. 
+The nodes are stored in a std::unordered map, which is a hash map. 
+The keys should be the 3 letter identifiers, so that 
 you can search by identifier in constant time.
 */
 class AirTravel {
@@ -90,7 +90,7 @@ class AirTravel {
         vector of edges/routes and returns a vector of all the identifiers which are 
         destinations of the id it takes in.
         */
-        vector<string> build_edges(string id, vector<vector<string>> & routes);
+        vector<string> build_edges(string id, vector<vector<string>> routes);
 
         /* not currently called anywhwere, but could be called in the constructor.
         would remove all the nodes that do not have an edge going to it

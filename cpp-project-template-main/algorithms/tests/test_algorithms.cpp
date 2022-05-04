@@ -21,4 +21,13 @@ TEST_CASE("Testing DFS") {
 	for (auto v : dfs.visited) {
 		REQUIRE(v == true);
 	}
-} 
+}
+
+TEST_CASE("Testing Dijkstra's") {
+	AirTravel graph = AirTravel("./algorithms/tests/test_nodes.dat","./algorithms/tests/test_edges.dat");
+	std::cout << "Adjacent nodes of AAA: " << graph.graph_nodes["AAA"].incident_edges.size() << std::endl;
+	std::cout << "Adjacent nodes of BBB: " << graph.graph_nodes["BBB"].incident_edges.size() << std::endl;
+	std::cout << "Adjacent nodes of CCC: " << graph.graph_nodes["CCC"].incident_edges.size() << std::endl;
+	std::cout << "Adjacent nodes of DDD: " << graph.graph_nodes["DDD"].incident_edges.size() << std::endl;
+	std::cout << "Adjacent nodes of EEE: " << graph.graph_nodes["EEE"].incident_edges.size() << std::endl;
+}

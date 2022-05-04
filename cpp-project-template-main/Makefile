@@ -170,30 +170,30 @@ ParsingLib/fast:
 .PHONY : ParsingLib/fast
 
 #=============================================================================
-# Target rules for targets named test-dfs
+# Target rules for targets named test-algo
 
 # Build rule for target.
-test-dfs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-dfs
-.PHONY : test-dfs
+test-algo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-algo
+.PHONY : test-algo
 
 # fast build rule for target.
-test-dfs/fast:
-	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/build
-.PHONY : test-dfs/fast
+test-algo/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/build
+.PHONY : test-algo/fast
 
 #=============================================================================
-# Target rules for targets named main-dfs
+# Target rules for targets named main-algo
 
 # Build rule for target.
-main-dfs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main-dfs
-.PHONY : main-dfs
+main-algo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main-algo
+.PHONY : main-algo
 
 # fast build rule for target.
-main-dfs/fast:
-	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-dfs.dir/build.make algorithms/CMakeFiles/main-dfs.dir/build
-.PHONY : main-dfs/fast
+main-algo/fast:
+	$(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/build
+.PHONY : main-algo/fast
 
 #=============================================================================
 # Target rules for targets named AlgorithmsLib
@@ -218,9 +218,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... AlgorithmsLib"
 	@echo "... ParsingLib"
-	@echo "... main-dfs"
+	@echo "... main-algo"
 	@echo "... main-parsing"
-	@echo "... test-dfs"
+	@echo "... test-algo"
 	@echo "... test-parsing"
 .PHONY : help
 

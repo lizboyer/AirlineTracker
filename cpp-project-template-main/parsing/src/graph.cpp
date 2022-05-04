@@ -48,6 +48,7 @@ AirTravel::AirTravel(string airports_file, string routes_file){
     vector<vector<string>> nodes = node_formatter(airports_file);
 
     vector<vector<string>> edges = edge_formatter(routes_file);
+
     size_t i = 0;
 
     //makes all the nodes
@@ -65,8 +66,8 @@ AirTravel::AirTravel(string airports_file, string routes_file){
         string id = it.first;
         Node node = it.second;
 
-        vector<string> incident = build_edges(id, edges);
-        node.set_adjacent(incident);
+        node.incident_edges = build_edges(id, edges);
+        std::cout << id << " in graph.cpp: " << node.incident_edges.size() << std::endl;
 
         // if (incident.empty()) {          this code will ensure that nodes
         //     graph_nodes.erase(id);       with no outgoing edges will not be 
@@ -167,15 +168,14 @@ vector<vector<string>> AirTravel::edge_formatter(string filename){
 }
 
 
-vector<string> AirTravel::build_edges(string id, vector<vector<string>> & routes){
+vector<string> AirTravel::build_edges(string id, vector<vector<string>> routes){
     vector<string> adjacent_ids;
     
-    for (vector<string> & route : routes) {
+    for (vector<string> route : routes) {
         if (route[0] == id) {
             adjacent_ids.push_back(route[1]);
         }
     }
-
     return adjacent_ids;
 }
 

@@ -33,7 +33,7 @@ TEST_CASE("edge_formatter test small_simple") {
     vector<vector<string>> edges = graph.edge_formatter("./parsing/tests/test_edges_small_simple.dat");
 
     REQUIRE(!edges.empty());
-    REQUIRE(edges.size() == 4);
+    REQUIRE(edges.size() == 7);
 
     bool pass = true;
 

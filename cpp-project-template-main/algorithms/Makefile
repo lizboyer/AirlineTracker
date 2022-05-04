@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/pkr3/project/cpp-project-template-main
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake3 -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -97,6 +86,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake3 -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,34 +131,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-algorithms/CMakeFiles/test-dfs.dir/rule:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/test-dfs.dir/rule
-.PHONY : algorithms/CMakeFiles/test-dfs.dir/rule
+algorithms/CMakeFiles/test-algo.dir/rule:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/test-algo.dir/rule
+.PHONY : algorithms/CMakeFiles/test-algo.dir/rule
 
 # Convenience name for target.
-test-dfs: algorithms/CMakeFiles/test-dfs.dir/rule
+test-algo: algorithms/CMakeFiles/test-algo.dir/rule
 
-.PHONY : test-dfs
+.PHONY : test-algo
 
 # fast build rule for target.
-test-dfs/fast:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/build
-.PHONY : test-dfs/fast
+test-algo/fast:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/build
+.PHONY : test-algo/fast
 
 # Convenience name for target.
-algorithms/CMakeFiles/main-dfs.dir/rule:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/main-dfs.dir/rule
-.PHONY : algorithms/CMakeFiles/main-dfs.dir/rule
+algorithms/CMakeFiles/main-algo.dir/rule:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 algorithms/CMakeFiles/main-algo.dir/rule
+.PHONY : algorithms/CMakeFiles/main-algo.dir/rule
 
 # Convenience name for target.
-main-dfs: algorithms/CMakeFiles/main-dfs.dir/rule
+main-algo: algorithms/CMakeFiles/main-algo.dir/rule
 
-.PHONY : main-dfs
+.PHONY : main-algo
 
 # fast build rule for target.
-main-dfs/fast:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-dfs.dir/build.make algorithms/CMakeFiles/main-dfs.dir/build
-.PHONY : main-dfs/fast
+main-algo/fast:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/build
+.PHONY : main-algo/fast
 
 # Convenience name for target.
 algorithms/CMakeFiles/AlgorithmsLib.dir/rule:
@@ -181,7 +181,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-dfs.dir/build.make algorithms/CMakeFiles/main-dfs.dir/main.cpp.o
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -190,7 +190,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-dfs.dir/build.make algorithms/CMakeFiles/main-dfs.dir/main.cpp.i
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -199,7 +199,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-dfs.dir/build.make algorithms/CMakeFiles/main-dfs.dir/main.cpp.s
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/main-algo.dir/build.make algorithms/CMakeFiles/main-algo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/algorithms.o: src/algorithms.cpp.o
@@ -208,7 +208,7 @@ src/algorithms.o: src/algorithms.cpp.o
 
 # target to build an object file
 src/algorithms.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/src/algorithms.cpp.o
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.o
 	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.o
 .PHONY : src/algorithms.cpp.o
 
@@ -218,7 +218,7 @@ src/algorithms.i: src/algorithms.cpp.i
 
 # target to preprocess a source file
 src/algorithms.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/src/algorithms.cpp.i
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.i
 	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.i
 .PHONY : src/algorithms.cpp.i
 
@@ -228,36 +228,9 @@ src/algorithms.s: src/algorithms.cpp.s
 
 # target to generate assembly for a file
 src/algorithms.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/src/algorithms.cpp.s
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/src/algorithms.cpp.s
 	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/AlgorithmsLib.dir/build.make algorithms/CMakeFiles/AlgorithmsLib.dir/src/algorithms.cpp.s
 .PHONY : src/algorithms.cpp.s
-
-tests/DFStest.o: tests/DFStest.cpp.o
-
-.PHONY : tests/DFStest.o
-
-# target to build an object file
-tests/DFStest.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/tests/DFStest.cpp.o
-.PHONY : tests/DFStest.cpp.o
-
-tests/DFStest.i: tests/DFStest.cpp.i
-
-.PHONY : tests/DFStest.i
-
-# target to preprocess a source file
-tests/DFStest.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/tests/DFStest.cpp.i
-.PHONY : tests/DFStest.cpp.i
-
-tests/DFStest.s: tests/DFStest.cpp.s
-
-.PHONY : tests/DFStest.s
-
-# target to generate assembly for a file
-tests/DFStest.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/tests/DFStest.cpp.s
-.PHONY : tests/DFStest.cpp.s
 
 tests/test.o: tests/test.cpp.o
 
@@ -265,7 +238,7 @@ tests/test.o: tests/test.cpp.o
 
 # target to build an object file
 tests/test.cpp.o:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/tests/test.cpp.o
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.o
 .PHONY : tests/test.cpp.o
 
 tests/test.i: tests/test.cpp.i
@@ -274,7 +247,7 @@ tests/test.i: tests/test.cpp.i
 
 # target to preprocess a source file
 tests/test.cpp.i:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/tests/test.cpp.i
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.i
 .PHONY : tests/test.cpp.i
 
 tests/test.s: tests/test.cpp.s
@@ -283,8 +256,35 @@ tests/test.s: tests/test.cpp.s
 
 # target to generate assembly for a file
 tests/test.cpp.s:
-	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-dfs.dir/build.make algorithms/CMakeFiles/test-dfs.dir/tests/test.cpp.s
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
+
+tests/test_algorithms.o: tests/test_algorithms.cpp.o
+
+.PHONY : tests/test_algorithms.o
+
+# target to build an object file
+tests/test_algorithms.cpp.o:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.o
+.PHONY : tests/test_algorithms.cpp.o
+
+tests/test_algorithms.i: tests/test_algorithms.cpp.i
+
+.PHONY : tests/test_algorithms.i
+
+# target to preprocess a source file
+tests/test_algorithms.cpp.i:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.i
+.PHONY : tests/test_algorithms.cpp.i
+
+tests/test_algorithms.s: tests/test_algorithms.cpp.s
+
+.PHONY : tests/test_algorithms.s
+
+# target to generate assembly for a file
+tests/test_algorithms.cpp.s:
+	cd /home/pkr3/project/cpp-project-template-main && $(MAKE) $(MAKESILENT) -f algorithms/CMakeFiles/test-algo.dir/build.make algorithms/CMakeFiles/test-algo.dir/tests/test_algorithms.cpp.s
+.PHONY : tests/test_algorithms.cpp.s
 
 # Help Target
 help:
@@ -295,20 +295,20 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AlgorithmsLib"
-	@echo "... main-dfs"
-	@echo "... test-dfs"
+	@echo "... main-algo"
+	@echo "... test-algo"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... src/algorithms.o"
 	@echo "... src/algorithms.i"
 	@echo "... src/algorithms.s"
-	@echo "... tests/DFStest.o"
-	@echo "... tests/DFStest.i"
-	@echo "... tests/DFStest.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_algorithms.o"
+	@echo "... tests/test_algorithms.i"
+	@echo "... tests/test_algorithms.s"
 .PHONY : help
 
 

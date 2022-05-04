@@ -23,10 +23,10 @@ link_directories("../parsing")
 target_link_libraries(AlgorithmsLib ParsingLib)
 
 # Add the executable
-add_executable(main-dfs main.cpp)
-target_link_libraries(main-dfs AlgorithmsLib)
+add_executable(main-algo main.cpp)
+target_link_libraries(main-algo AlgorithmsLib)
 
-target_include_directories(main-dfs PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(main-algo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 # Add Catch2
@@ -39,5 +39,5 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(Catch2)
-add_executable(test-dfs ${SOURCES} ${TEST_SOURCES})
-target_link_libraries(test-dfs AlgorithmsLib Catch2::Catch2)
+add_executable(test-algo ${SOURCES} ${TEST_SOURCES})
+target_link_libraries(test-algo AlgorithmsLib Catch2::Catch2)
