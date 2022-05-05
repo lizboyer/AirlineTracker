@@ -31,3 +31,31 @@ TEST_CASE("Testing Dijkstra's") {
 	std::cout << "Adjacent nodes of DDD: " << graph.graph_nodes["DDD"].incident_edges.size() << std::endl;
 	std::cout << "Adjacent nodes of EEE: " << graph.graph_nodes["EEE"].incident_edges.size() << std::endl;
 }
+
+TEST_CASE("Testing Kosaraju's graph1") {
+	string node_file = "./data/testing_k/k_test1_nodes.dat";
+    string edge_file = "./data/testing_k/k_test1_edges.dat";
+
+	AirTravel graph(node_file, edge_file);
+
+	REQUIRE(graph.graph_nodes.size() == 5);
+	//REQUIRE(graph.graph_nodes["CCC"].adja)
+
+	int comp = Kosaraju(graph);
+
+	REQUIRE(comp == 3);
+}
+
+TEST_CASE("Testing Kosaraju's graph2") {
+	string node_file = "./data/testing_k/k_test2_nodes.dat";
+    string edge_file = "./data/testing_k/k_test2_edges.dat";
+
+	AirTravel graph(node_file, edge_file);
+
+	REQUIRE(graph.graph_nodes.size() == 6);
+	//REQUIRE(graph.graph_nodes["CCC"].adja)
+
+	int comp = Kosaraju(graph);
+
+	REQUIRE(comp == 2);
+}

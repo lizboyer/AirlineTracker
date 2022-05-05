@@ -117,15 +117,18 @@ int Kosaraju(AirTravel graph) {
 	for(auto it : nodes) {
 		visited[it.first] = false;
 		nodes_r[it.first].incident_edges = {};
-	}	
+	}
+	cout << "first loop done" << endl;
 
 	//this begins the first dfs for topological sort
 	//after this loop, the stack should be built
-	for (auto it :nodes) {
+	for (auto it : nodes) {
 		if (visited[it.first])
 			continue;
+		cout << "problem is in k_helper0" << endl;
 		K_helper0(visited, nodes, stk, it.first);	
 	}
+	cout << "first dfs done" << endl;
 
 	//time to reverse the graph
 	vector<string> edges;
@@ -135,23 +138,26 @@ int Kosaraju(AirTravel graph) {
 		for (int i = 0; i < int(edges.size()); i++)
 			nodes_r[edges[i]].incident_edges.push_back(it.first);
 	}
+	cout << "graph reversed" << endl;
 
 	//one more dfs, this time on the resversed graph,
 	//counting each time we go to a new connected component
 	for(auto it : nodes_r) {
 		visited[it.first] = false;
 	}
+	cout << "visited reset" << endl;
 
 	string cur_node;
 	while (!stk.empty()){
-		num_components++;
 		cur_node = stk.top();
 		if (visited[cur_node]){
 			stk.pop();
 			continue;
 		}
-		K_helper1(visited, nodes_r, stk, cur_node);	
+		K_helper1(visited, nodes_r, stk, cur_node);
+		num_components++;	
 	}
+	cout << "final dfs done";
 
 	return num_components;
 }
@@ -161,13 +167,14 @@ void K_helper0(unordered_map<string, bool> & visited,
 	stack<string> & stk, string cur_node){
 	
 	vector<string> & edges = graph_nodes[cur_node].incident_edges;
+	visited[cur_node] = true;
+	cout << "problem is in the for-loop" << endl;
 
 	for(int i = 0; i < int(edges.size()); i++){
 		if (!visited[edges[i]])
 			K_helper0(visited, graph_nodes, stk, edges[i]);
 	}
 	stk.push(cur_node);
-	visited[cur_node] = true;
 }
 
 void K_helper1(unordered_map<string, bool> & visited,
@@ -175,11 +182,10 @@ void K_helper1(unordered_map<string, bool> & visited,
 	stack<string> & stk, string cur_node){
 	
 	vector<string> & edges = graph_nodes[cur_node].incident_edges;
-
+	visited[cur_node] = true;
 	for(int i = 0; i < int(edges.size()); i++){
 		if (!visited[edges[i]])
 			K_helper1(visited, graph_nodes, stk, edges[i]);
 	}
-	visited[cur_node] = true;
 }
 /////////// Kosaraju ////////////
