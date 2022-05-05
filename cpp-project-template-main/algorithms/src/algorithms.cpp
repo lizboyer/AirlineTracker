@@ -5,23 +5,23 @@
 
 using namespace std;
 
-//DFS
+//////DFS/////
 
 DFS::DFS (AirTravel graph) {
-	nodes = graph.graph_nodes;
+	nodes = graph.graph_nodes;	//taking information from graph
 	links = graph.link;
-    visited.resize(nodes.size(), false);
+    visited.resize(nodes.size(), false);	//resizing visited vertex to fit nodes
 	for (auto i : nodes) {    //iterates through vertex
 		if (visited[links[i.first]] == false) {  //if the node has not been visited, call DFShelper
-			DFShelper(i.first);
+			DFShelper(i.first);	
 		}
 	}
 }
 
 void DFS::DFShelper (string id) {   
 	visited[links[id]] = true;  //turn visited to true
-    vector<string> adjacent_ids = nodes[id].incident_edges;
-	for (auto i : adjacent_ids) {    //iterate through vertex
+    vector<string> adjacent_ids = nodes[id].incident_edges;	
+	for (auto i : adjacent_ids) {    //iterate through incident edges
 		if (!visited[links[i]]) {  //if the node has not been visited, call DFShelper
 			DFShelper(i);
 		}
