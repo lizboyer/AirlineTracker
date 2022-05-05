@@ -17,9 +17,9 @@ To find the definition of all methods in the AirTravel class, in the cpp-projet-
 
 ## Running Instructions
 
-Change directory to cpp-project-template-main/
-cmake3 .
-make
+1. Change directory to cpp-project-template-main/
+2. cmake3 .
+3. make
 
 
 ### Main
