@@ -4,7 +4,7 @@ Final project for kyuhahp2-eboyer2-mac18-pkr3
 # Project Proposal
 
 ## 1. Leading Question
-Our goal is to create a search algorithm to the top 3 shortest paths between any two airports, using Dijkstra’s and the Strongly Connected Component Algorithms and the OpenFlights dataset. Dijkstra’s Algorithm finds the shortest path between nodes in a graph. Here, those nodes are airports, and the edges are the flight paths from OpenFlights. Strongly Connected Component Algorithms finds components that have the greatest amount of connections going through them, in our case, these are airports with the greatest amount of traffic. If time allows, we also plan to implement a GUI to allow the user to navigate the program. 
+Our goal is to create a search algorithm to the shortest paths between any two airports, using Dijkstra’s and the Strongly Connected Component Algorithms and the OpenFlights dataset. Dijkstra’s Algorithm finds the shortest path between nodes in a graph. Here, those nodes are airports, and the edges are the flight paths from OpenFlights. Strongly Connected Component Algorithms finds components that have the greatest amount of connections going through them, in our case, these are airports with the greatest amount of traffic. If time allows, we also plan to implement a GUI to allow the user to navigate the program. 
 
 ## 2. Dataset Acquisition
 We will gather data on Airports and flights connecting them from OpenFlights. From the site, we will download the airport database, including over 14,000 airports and the routes database including over 67,000 flights, each in the form of a CSV.
@@ -16,7 +16,7 @@ In addition, according to the Openflights site, many of the airports will not ha
 We will store each airport as a node, and each node will contain all of the routes connecting it to other airports, therefore our storage will be O(A), with A being the number of airports we include as nodes in our graph.
 
 ## 3. Graph Algorithms
-To identify the shortest path we will implement Dijkstra’s Algorithm. The function inputs will be two airport codes, the starting point and the destination, and the function output will be three of the shortest routes. The non-negative weights will be distance from the starting vertex as determined by location data from the dataset. Our target runtime will be O(V + E).
+To identify the shortest path we will implement Dijkstra’s Algorithm. The function inputs will be two airport codes, the starting point and the destination, and the function output will be the shortest routes. The non-negative weights will be distance from the starting vertex as determined by location data from the dataset. Our target runtime will be O(V + E).
 
 To traverse through the airline graph, we will be implementing DFS due to its compatibility with the strongly connected component algorithm we have chosen. However, due to similarities between Dijkstra’s and BFS, we may implement it as well. We will be using Kosaraju’s algorithm to find the strongly connected vertices from the airline graph, which will then be assigned weights that we can use in Dijkstra’s algorithm. The target runtime for this algorithm is also O(V + E).
 
