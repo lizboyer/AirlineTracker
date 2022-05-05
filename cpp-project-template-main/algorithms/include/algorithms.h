@@ -15,6 +15,8 @@ using namespace std;
 
 #include "../../parsing/include/graph.h"
 
+using std::stack;
+
 class DFS {
 
     public:

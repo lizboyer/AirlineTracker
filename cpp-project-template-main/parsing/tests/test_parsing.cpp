@@ -100,15 +100,3 @@ TEST_CASE("edges get built in graph constructor") {
     REQUIRE(inc.size() == 4);
 }
 
-
-TEST_CASE("correct parsing") {
-    AirTravel graph = AirTravel();
-
-    int count = 0;
-    for(auto it : graph.graph_nodes) {
-        if (it.first == "???")
-            count++;
-    }
-    REQUIRE(count==0);
-
-}

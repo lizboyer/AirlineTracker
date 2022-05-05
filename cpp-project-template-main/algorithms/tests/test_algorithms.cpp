@@ -44,3 +44,45 @@ TEST_CASE("Testing Dijkstra's") {
 	REQUIRE(path_multiple.size() == ans_multiple.size());
 	for (size_t i = 0; i < path_multiple.size(); i++) REQUIRE(path_multiple[i] == ans_multiple[i]);
 }
+
+TEST_CASE("Testing Kosaraju's graph1") {
+	string node_file = "./data/testing_k/k_test1_nodes.dat";
+    string edge_file = "./data/testing_k/k_test1_edges.dat";
+
+	AirTravel graph(node_file, edge_file);
+
+	REQUIRE(graph.graph_nodes.size() == 5);
+	//REQUIRE(graph.graph_nodes["CCC"].adja)
+
+	int comp = Kosaraju(graph);
+
+	REQUIRE(comp == 3);
+}
+
+TEST_CASE("Testing Kosaraju's graph2") {
+	string node_file = "./data/testing_k/k_test2_nodes.dat";
+    string edge_file = "./data/testing_k/k_test2_edges.dat";
+
+	AirTravel graph(node_file, edge_file);
+
+	REQUIRE(graph.graph_nodes.size() == 6);
+	//REQUIRE(graph.graph_nodes["CCC"].adja)
+
+	int comp = Kosaraju(graph);
+
+	REQUIRE(comp == 2);
+}
+
+TEST_CASE("Testing Kosaraju's graph3, disconnected graph") {
+	string node_file = "./data/testing_k/k_test3_nodes.dat";
+    string edge_file = "./data/testing_k/k_test3_edges.dat";
+
+	AirTravel graph(node_file, edge_file);
+
+	REQUIRE(graph.graph_nodes.size() == 4);
+	//REQUIRE(graph.graph_nodes["CCC"].adja)
+
+	int comp = Kosaraju(graph);
+
+	REQUIRE(comp == 3);
+}
