@@ -12,37 +12,36 @@ using namespace std;
 
 
 TEST_CASE("node_formatter test small_simple") {
-    AirTravel graph = AirTravel();
+    AirTravel graph = AirTravel();  //construct graph
 
     vector<vector<string>> nodes = graph.node_formatter("./parsing/tests/test_nodes_small_simple.dat");
 
-    REQUIRE(!nodes.empty());
+    REQUIRE(!nodes.empty());    //there should be nodes, and one per row
     REQUIRE(nodes.size() == 5);
 
     bool pass = true;
 
     for (int i = 0; i < nodes.size(); i++) {
-        if (nodes[i].size() != 4)
-            pass = false;
+        if (nodes[i].size() != 4)   //there should be four columns per row
+            pass = false;   //if not, it did not pass
             break;
     }
     REQUIRE(pass);
 }
 
 TEST_CASE("node_formatter test large") {
-    AirTravel graph = AirTravel();
-    cout<< "running parsing test";
+    AirTravel graph = AirTravel(); //construct graph
 
     vector<vector<string>> nodes = graph.node_formatter("./data/airports_formatted.dat");
 
-    REQUIRE(!nodes.empty());
+    REQUIRE(!nodes.empty());    //There should be nodes, and one for each airport (7698)
     REQUIRE(nodes.size() == 7698);
 
     bool pass = true;
 
     for (int i = 0; i < nodes.size(); i++) {
-        if (nodes[i].size() != 4)
-            pass = false;
+        if (nodes[i].size() != 4)   //there should be 4 columns in each row
+            pass = false;   //if there are not, it did not pass the test
             break;
     }
     REQUIRE(pass);
@@ -66,6 +65,23 @@ TEST_CASE("edge_formatter test small_simple") {
     REQUIRE(pass);
 }
 
+TEST_CASE("edge_formatter test large") {
+    AirTravel graph = AirTravel();
+
+    vector<vector<string>> edges = graph.edge_formatter("./data/routes_formatted.dat");
+
+    REQUIRE(!edges.empty());
+    REQUIRE(edges.size() == 67663);
+
+    bool pass = true;
+
+    for (int i = 0; i < edges.size(); i++) {
+        if (edges[i].size() != 2)
+            pass = false;
+            break;
+    }
+    REQUIRE(pass);
+}
 
 TEST_CASE("Graph size > 0") {
     string node_file = "./parsing/tests/test_nodes_small_simple.dat";
