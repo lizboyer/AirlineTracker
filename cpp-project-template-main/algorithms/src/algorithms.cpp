@@ -145,13 +145,13 @@ int Kosaraju(AirTravel graph) {
 
 	string cur_node;
 	while (!stk.empty()){
-		num_components++;
 		cur_node = stk.top();
 		if (visited[cur_node]){
 			stk.pop();
 			continue;
 		}
-		K_helper1(visited, nodes_r, stk, cur_node);	
+		K_helper1(visited, nodes_r, stk, cur_node);
+		num_components++;	
 	}
 
 	return num_components;
