@@ -6,7 +6,9 @@
 using std::unordered_map;
 using std::vector;
 using std::string;
+using std::cout;
 using namespace std;
+
 
 
 TEST_CASE("node_formatter test small_simple") {
@@ -16,6 +18,25 @@ TEST_CASE("node_formatter test small_simple") {
 
     REQUIRE(!nodes.empty());
     REQUIRE(nodes.size() == 5);
+
+    bool pass = true;
+
+    for (int i = 0; i < nodes.size(); i++) {
+        if (nodes[i].size() != 4)
+            pass = false;
+            break;
+    }
+    REQUIRE(pass);
+}
+
+TEST_CASE("node_formatter test large") {
+    AirTravel graph = AirTravel();
+    cout<< "running parsing test";
+
+    vector<vector<string>> nodes = graph.node_formatter("./data/airports_formatted.dat");
+
+    REQUIRE(!nodes.empty());
+    REQUIRE(nodes.size() == 7698);
 
     bool pass = true;
 
