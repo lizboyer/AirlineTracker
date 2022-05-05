@@ -72,6 +72,7 @@ AirTravel::AirTravel(string airports_file, string routes_file){
         //     graph_nodes.erase(id);       with no outgoing edges will not be 
         // }                                included in the graph
     }
+    std::cout << "edges got made" << std::endl;
 }
 
 
@@ -168,9 +169,9 @@ vector<vector<string>> AirTravel::edge_formatter(string filename){
 
 
 vector<string> AirTravel::build_edges(string id, vector<vector<string>> routes){
-    vector<string> adjacent_ids;
+    vector<string> adjacent_ids = {};
     
-    for (vector<string> route : routes) {
+    for (vector<string> & route : routes) {
         if (route[0] == id) {
             adjacent_ids.push_back(route[1]);
         }

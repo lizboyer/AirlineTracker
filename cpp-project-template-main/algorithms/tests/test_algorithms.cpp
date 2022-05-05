@@ -59,3 +59,18 @@ TEST_CASE("Testing Kosaraju's graph2") {
 
 	REQUIRE(comp == 2);
 }
+
+TEST_CASE("Testing Kosaraju's graph3, disconnected graph") {
+	string node_file = "./data/testing_k/k_test3_nodes.dat";
+    string edge_file = "./data/testing_k/k_test3_edges.dat";
+
+	std::cout << "this is test 3" << std::endl;
+	AirTravel graph(node_file, edge_file);
+
+	REQUIRE(graph.graph_nodes.size() == 4);
+	//REQUIRE(graph.graph_nodes["CCC"].adja)
+
+	int comp = Kosaraju(graph);
+
+	REQUIRE(comp == 3);
+}
