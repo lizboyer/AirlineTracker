@@ -21,7 +21,6 @@ To find the definition of all methods in the AirTravel class, in the cpp-projet-
 2. cmake3 .
 3. make
 
-
 ### Main
 …
 
