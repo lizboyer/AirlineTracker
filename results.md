@@ -1,7 +1,7 @@
 # Results
 
 ## Output and Correctness
-Our project loads airport data and route data to create a graph and compute Dijkstra’s, DFS, and Kosaraju's. With an input of a graph of airports, starting airport, and destination airport we used Dijkstra’s algorithm to find the shortest route from the starting airport to the destination
+Our project loads airport data and route data to create a graph and compute Dijkstra’s, DFS, and Kosaraju's. To obtain the graph of relavent data, we reformatted the data from the OpenFlights CSV’s to have only the airport’s identifiers, longitude, latitude, and names (for the purpose of a readable output). Then, a graph was created using the formatted data. With this as our input of a graph of all airports, the user input of a starting airport, and the user input of a destination airport, we used Dijkstra’s algorithm to find the shortest route from the starting airport to the destination
 Airport. Dijkstra’s algorithm will output the path as a vector of strings, with the strings being the three letter airport code from the starting to destination airport. DFS was used to parse through each node of the graph. With an input of a a graph of airports we used Kosaraju’s algorithm to output and int of the number of strongly connected components in the given graph.
 To confirm that each algorithm was working as intended, we made sufficient smaller test cases that considers each edge case for each algorithm. We also ran tests using the full data sets of airports and routes to confirm that our algorithm is working as expected. Instructions to run each test is given in the README.md. 
 
