@@ -25,9 +25,22 @@ TEST_CASE("Testing DFS") {
 
 TEST_CASE("Testing Dijkstra's") {
 	AirTravel graph = AirTravel("./algorithms/tests/test_nodes.dat","./algorithms/tests/test_edges.dat");
-	std::cout << "Adjacent nodes of AAA: " << graph.graph_nodes["AAA"].incident_edges.size() << std::endl;
-	std::cout << "Adjacent nodes of BBB: " << graph.graph_nodes["BBB"].incident_edges.size() << std::endl;
-	std::cout << "Adjacent nodes of CCC: " << graph.graph_nodes["CCC"].incident_edges.size() << std::endl;
-	std::cout << "Adjacent nodes of DDD: " << graph.graph_nodes["DDD"].incident_edges.size() << std::endl;
-	std::cout << "Adjacent nodes of EEE: " << graph.graph_nodes["EEE"].incident_edges.size() << std::endl;
+
+	//Tests for direct edge between two nodes
+	vector<string> path_direct = dijkstra(graph, "AAA", "CCC");
+	vector<string> ans_direct {"AAA", "CCC"};
+	REQUIRE(path_direct.size() == ans_direct.size());
+	for (size_t i = 0; i < path_direct.size(); i++) REQUIRE(path_direct[i] == ans_direct[i]);
+
+	//Tests for no direct edge but indirect connection between two nodes
+	vector<string> path_indirect = dijkstra(graph, "BBB", "DDD");
+	vector<string> ans_indirect {"BBB", "AAA", "DDD"};
+	REQUIRE(path_indirect.size() == ans_indirect.size());
+	for (size_t i = 0; i < path_indirect.size(); i++) REQUIRE(path_indirect[i] == ans_indirect[i]);
+
+	//Tests for multiple paths between two nodes - should determine based on lowest distance
+	vector<string> path_multiple = dijkstra(graph, "CCC", "EEE");
+	vector<string> ans_multiple {"CCC", "EEE"};
+	REQUIRE(path_multiple.size() == ans_multiple.size());
+	for (size_t i = 0; i < path_multiple.size(); i++) REQUIRE(path_multiple[i] == ans_multiple[i]);
 }

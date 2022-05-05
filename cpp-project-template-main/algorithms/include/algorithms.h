@@ -9,6 +9,9 @@
 #include <string>
 #include <ostream>
 #include <algorithm>
+#include <stack>
+
+using namespace std;
 
 #include "../../parsing/include/graph.h"
 
@@ -16,15 +19,15 @@ class DFS {
 
     public:
     /**
-    * Called by main function. Iterates through
-    * the graph until it hits a node that has not
-    * been visited. It then calls DFShelper.
+    * Constructor for DFS. Iterates through each node and
+    * marks them as visited. Calls DFSHelper for all
+    * adjacent nodes to do the same.
     */
     DFS (AirTravel graph);
 
 
     /**
-    * Called by DFS when a node has not been visited.
+    * Called by DFS when an adjacent node has not been visited.
     * Sets "visited" to true on that node, and continues
     * iterating through the rest of the graph until it runs
     * into another unvisited node, whereupon it calls itself.
@@ -35,15 +38,21 @@ class DFS {
     vector<bool> visited { false };
     
     private:
+    //reference structures for graph maps
     unordered_map<string, AirTravel::Node> nodes;
     unordered_map<string, size_t> links;
 };
-
+/**
+* Dijkstra's algorithm to find the path between nodes
+* as determined by smallest sum of distances in path,
+* i.e. if there are multiple paths, the one with shortest
+* distance will be outputted
+**/
 vector<string> dijkstra (AirTravel graph, string startID, string destinationID);
 
 // Kosaraju's algorithm for strongly connected component
 // this algorithm uses topological sort, including a dfs, to sort 
-// the nodes by finishing time. It then reverses the dirrection of 
+// the nodes by finishing time. It then reverses the direction of 
 // all edges in the graph, and performs another dfs of all the nodes, 
 // counting the strongly connected components. It then returns the
 // number of strongly connected components of the graph.

@@ -2,7 +2,7 @@
 
 #include "../include/algorithms.h"
 #include <iostream>
-#include <stack>
+#include <cfloat>
 
 using namespace std;
 
@@ -43,7 +43,7 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 		if (element.first == startID) {
 			min_heap.push_back(pair<double, string>(0, element.first));
 		} else {
-			min_heap.push_back(pair<double, string>(__DBL_MAX__, element.first));
+			min_heap.push_back(pair<double, string>(DBL_MAX, element.first));
 		}
     }
 
@@ -54,15 +54,18 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 	unordered_map<string, double> nodeDist; 
 	unordered_map<string, string> prevNode; 
     for (pair<string, AirTravel::Node> element : graph.graph_nodes) {
-		nodeDist.insert(pair<string, double>(element.first, __DBL_MAX__));
+		if (element.first == startID) nodeDist.insert(pair<string, double>(element.first, 0)); //sets distance to 0 for source ID
+		else nodeDist.insert(pair<string, double>(element.first, DBL_MAX)); //sets distance to largest double value for all other airports
 		prevNode.insert(pair<string, string>(element.first, ""));
 	}
 
 	while (!min_heap.empty()){
         pair<double, string> elem = min_heap[0];
 
+		//removes element of smallest distance from min_heap
 		pop_heap(min_heap.begin(), min_heap.end(), std::greater<std::pair<double, string>>{});
 		min_heap.pop_back();
+
 		string idx = elem.second;
 
 		for (int i = 0; i < graph.graph_nodes[idx].incident_edges.size(); i++) {
@@ -70,6 +73,7 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 			string destIdx = graph.graph_nodes[idx].incident_edges[i];
 			double destDist = graph.CalcDist(idx, destIdx);
 
+			//checks if adjacent airport is in heap
 			for (int j = 0; j < min_heap.size(); j++) {
 				if (min_heap[j].second == destIdx) {
 					inHeap = true;
@@ -77,10 +81,12 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 				}
 			}
 
-			if (inHeap && nodeDist[idx] != __DBL_MAX__ && destDist + nodeDist[idx] < nodeDist[destIdx]) {
+			//if so, node distance is updated to true value and previous node is added
+			if (inHeap && nodeDist[idx] != DBL_MAX && destDist + nodeDist[idx] < nodeDist[destIdx]) {
 				nodeDist[destIdx] = destDist + nodeDist[idx];
                 prevNode[destIdx] = idx;
 
+				//updates values for min_heap
                 for (int j = 0; j < min_heap.size(); j++){
                     if (min_heap[j].second == destIdx) {
                         min_heap[j].first = nodeDist[destIdx];
@@ -91,13 +97,16 @@ vector<string> dijkstra (AirTravel graph, string startID, string destinationID) 
 		}
 		if (idx == destinationID) break;
 	}
-
+	//final distance is calculated
 	dist = nodeDist[destinationID];
-	if (dist == __DBL_MAX__) return path;
+
+	//if undetermined, empty route is returned
+	if (dist == DBL_MAX) return path;
+
+	//if determined, route is found by going through the direct previous nodes of each airport until source ID is reached
 	string i = destinationID;
 	path.push_back(i);
 	while (prevNode[i] != "") {
-
 		path.push_back(prevNode[i]);
 		i = prevNode[i];
 	}
