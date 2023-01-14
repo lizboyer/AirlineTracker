@@ -1,8 +1,8 @@
 # Airport Route Graph
-Final project for kyuhahp2-eboyer2-mac18-pkr3
+Final project for kyuhahp2-eboyer2-mac18-pkr3. Takes input of an initial airport, and destination airport, and finds the shortest route between the two.
 
 ## Video Presentation
-[link to our video]
+https://www.youtube.com/watch?v=PHeDgBKjMTA
 
 ## File Location
 
